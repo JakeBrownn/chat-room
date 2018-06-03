@@ -4,7 +4,9 @@
   "description": "Experiementing with Node.js and Socket.io to create a simple messenger app.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "webpack-dev-server",
+    "build:prod": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -17,8 +19,19 @@
   },
   "homepage": "https://github.com/JakeBrownn/chat-room#readme",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.11",
     "express": "^4.16.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.9.0",
     "nodemon": "^1.17.5",
-    "socket.io": "^2.1.1"
+    "sass-loader": "^7.0.2",
+    "socket.io": "^2.1.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1",
+    "webpack-dev-server": "^3.1.4"
   }
 }

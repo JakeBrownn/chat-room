@@ -1,24 +1,29 @@
-// Make socket connection
-const connectionURL = 'http://localhost:5000';
-const socket = io.connect(connectionURL);
+// Document Variables
+const URL = window.location.href;
+const socket = io.connect(URL);
+
 
 // DOM Variables
 const message = document.getElementById('message-input');
 const output = document.getElementById('message-output');
-const handle = document.getElementById('handle-input');
+const handle = document.getElementById('username');
 const button = document.getElementById('send-button');
 const feedback = document.getElementById('user-feedback');
 
 
-// Event Listeners
+// On send message
+button.addEventListener('click', (e) => {
+  e.preventDefault();
 
-// On message sent
-button.addEventListener('click', () => {
   socket.emit('chat', {
     message: message.value,
     handle: handle.value
   });
+
+  // Clear message
+  message.value = '';
 });
+
 
 // On user typing
 message.addEventListener('keypress', () => {
@@ -26,15 +31,17 @@ message.addEventListener('keypress', () => {
 });
 
 
-// Event Handlers
-
-// When a message is submitted
+// Handle message submit
 socket.on('chat', (data) => {
-  output.innerHTML += '<p><strong>' + data.handle + ':</strong> ' + data.message + '</p>';
+  const messageUsername = '<span class="message__username">' + data.handle + ': </span>';
+  const messageContent = '<span class="message__content">' + data.message + '</span>';
+
+  output.innerHTML += '<p class="message">' + messageUsername + messageContent + '</p>';
   feedback.innerHTML = '';
 });
 
-// When user is typing
+
+// Handle user typing
 socket.on('userTyping', (data) => {
   feedback.innerHTML = '<p><em>' + data + ' is typing...</em></p>';
 });

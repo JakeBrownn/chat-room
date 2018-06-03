@@ -6,20 +6,20 @@
   <title>Chat Room</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
-  <link href="./styles/main.css" rel="stylesheet" />
+  <link href="./dist//main.css" rel="stylesheet" />
 </head>
 <body>
-  
   <main class="chat-room">
     <div class="chat-room__window">
       <div class="chat-room__output" id="message-output"></div>
-      <div class="chat-room__feedback" id="user-feedback"></div>
+      <div class="chat-room__user-feedback" id="user-feedback"></div>
     </div>
-    <input class="chat-room__handle" id="handle-input" type="text" placeholder="Handle" />
-    <input class="chat-room__message" id="message-input" type="text" placeholder="Message" />
-    <button class="chat-room__send" id="send-button">Send</button>
+    <form class="user-form">
+      <input class="user-form__username" id="username" type="text" placeholder="Username" />
+      <input class="user-form__message" id="message-input" type="text" placeholder="Message" />
+      <input class="user-form__send" id="send-button" type="Submit" value="Send" />
+    </form>
   </main>
-
-  <script src="./js/config.js"></script>
+  <script src="./dist/bundle.js"></script>
 </body>
 </html>
