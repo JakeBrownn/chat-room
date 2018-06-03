@@ -1,18 +1,19 @@
 {
   "name": "chat-room",
   "version": "1.0.0",
-  "description": "Experiementing with Node.js and Socket.io to create a simple messenger app.",
+  "description": "A simple messenger app built with Node.js (Express) and Socket.io",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "server": "nodemon index.js",
     "build": "webpack-dev-server",
-    "build:prod": "webpack -p"
+    "build:prod": "webpack -p",
+    "dev": "concurrently \"nodemon index.js\" \"sass --watch ./src/styles/main.scss:./src/dist/main.css\" "
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JakeBrownn/chat-room.git"
   },
-  "author": "",
+  "author": "Jake Brown",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JakeBrownn/chat-room/issues"

@@ -1,0 +1,47 @@
+// This file contains
+// All styles related to the Chat Screen
+
+.chat-room {
+  background-color: $color-base;
+
+  &__history {
+    height: 400px;
+    overflow: auto;
+    padding: 20px;
+  }
+
+  &__messages {
+    padding: 5px;
+  }
+
+  &__user-feedback {
+
+  }
+}
+
+.message {
+
+  &__username {
+    font-weight: 600;
+  }
+
+  &__content {
+    display: inline-block;
+    background-color: $color-light-grey;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+}
+
+.user-form {
+  &__username {
+  }
+
+  &__message {
+
+  }
+
+  &__send {
+
+  }
+}

@@ -1,29 +1,11 @@
-.chat-room {
-  &__window {
-    height: 400px;
-    overflow: auto;
-    background: #f9f9f9;
-  }
+// This file is compiled to CSS
+// which can be located in ./src/dist/main.css
 
-  &__output {
-    
-  }
+@import 
+  'abstracts/variables';
 
-  &__user-feedback {
+@import
+  'base/reset';
 
-  }
-}
-
-.user-form {
-  &__username {
-
-  }
-
-  &__message {
-
-  }
-
-  &__send {
-
-  }
-}
+@import
+  'screens/chat-screen';

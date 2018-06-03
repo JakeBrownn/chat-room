@@ -6,12 +6,13 @@
   <title>Chat Room</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="./dist//main.css" rel="stylesheet" />
 </head>
 <body>
   <main class="chat-room">
-    <div class="chat-room__window">
-      <div class="chat-room__output" id="message-output"></div>
+    <div class="chat-room__history">
+      <div class="chat-room__messages" id="message-output"></div>
       <div class="chat-room__user-feedback" id="user-feedback"></div>
     </div>
     <form class="user-form">
