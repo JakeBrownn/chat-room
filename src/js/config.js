@@ -11,17 +11,6 @@ const button = document.getElementById('send-button');
 const feedback = document.getElementById('user-feedback');
 
 
-// Timestamp
-const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
-const d = new Date();
-const hour = d.getHours().toString();
-const minute = d.getMinutes().toString();
-const day = days[d.getDay()];
-
-const timestamp = day + ' at ' + hour + ':' + minute;
-
-
 // On send message
 button.addEventListener('click', (e) => {
   e.preventDefault();
@@ -44,15 +33,16 @@ message.addEventListener('keypress', () => {
 
 // Handle message submit
 socket.on('chat', (data) => {
-  
-  // Create timestamp 
+  const d = new Date();
+  const hour = d.getHours().toString();
+  const minute = d.getMinutes().toString();
+  const timestamp = hour + ':' + minute;
 
-
-  const messageUsername = '<span class="message__username">' + data.username + ': </span>';
+  const messageTimestamp = '<span class="message__timestamp">[' + timestamp + ']</span>';
+  const messageUsername = '<span class="message__username">' + data.username + ':</span>';
   const messageContent = '<span class="message__content">' + data.message + '</span>';
-  const messageTimestamp = '<span class="message__timestamp>' + timestamp + '</span>';
 
-  output.innerHTML += '<p class="message">' + messageUsername + messageContent + '</p>';
+  output.innerHTML += '<p class="message">' + messageTimestamp + messageUsername + messageContent + '</p>';
   feedback.innerHTML = '';
 });
 

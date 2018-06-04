@@ -1,0 +1,9 @@
+.header {
+  height: 75px;
+  @include flex(row);
+
+  &__logo {
+    @include user-drag(none);
+    @include user-select(none);
+  }
+}

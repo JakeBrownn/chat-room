@@ -2,10 +2,12 @@
 // which can be located in ./src/dist/main.css
 
 @import 
-  'abstracts/variables';
+  'abstracts/variables',
+  'abstracts/mixins';
 
 @import
-  'base/reset';
+  'base/reset',
+  'base/header';
 
 @import
   'screens/chat-screen';

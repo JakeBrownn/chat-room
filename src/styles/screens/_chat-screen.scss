@@ -2,10 +2,12 @@
 // All styles related to the Chat Screen
 
 .chat-room {
-  background-color: $color-base;
+  position: relative;
+  height: 100%;
+  background-color: $color-light-grey;
 
   &__history {
-    height: 400px;
+    height: 80%;
     overflow: auto;
     padding: 20px;
   }
@@ -20,28 +22,49 @@
 }
 
 .message {
+  margin-bottom: 20px;
 
-  &__username {
-    font-weight: 600;
+  &__username,
+  &__timestamp {
+    margin-right: 5px;
+    font-weight: 500;
   }
 
   &__content {
     display: inline-block;
-    background-color: $color-light-grey;
-    padding: 5px 10px;
+
     border-radius: 10px;
   }
 }
 
 .user-form {
+  position: fixed;
+  left: 5%;
+  bottom: 50px;
+  width: 90%;
+  margin: 0 auto;
+  @include flex(row);
+
   &__username {
+    display: none;
   }
 
   &__message {
-
+    width: 95%;
   }
 
   &__send {
+    display: inline-block;
+    background-color: $color-dark-green;
+    width: auto;
+    padding: 10px 20px;
+    color: $color-base;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
+    &:hover {
+      background-color: $color-green;
+    }
   }
 }

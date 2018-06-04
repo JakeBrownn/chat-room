@@ -1,4 +1,6 @@
 // JS files
-import './Config';
+import './config';
+import './user';
+import './chat';
 
 import '../styles/main.scss';

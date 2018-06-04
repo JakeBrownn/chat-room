@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
-    "build": "webpack-dev-server",
+    "build:dev": "concurrently \"webpack -p\" \"nodemon index.js\"",
     "build:prod": "webpack -p",
     "dev": "concurrently \"nodemon index.js\" \"sass --watch ./src/styles/main.scss:./src/dist/main.css\" "
   },

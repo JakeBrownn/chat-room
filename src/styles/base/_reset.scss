@@ -1,9 +1,16 @@
 // This file contains
 // All base styles
 
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
+  height: 100%;
   margin: 0;
   font-family: $font-stack;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -16,9 +23,15 @@ input {
   clear: both;
   width: 100%;
   border: 0;
-  padding: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 input[type="submit"] {
+  font-size: 14px;
   cursor: pointer;
 }

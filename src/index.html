@@ -6,21 +6,27 @@
   <title>Chat Room</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="./dist//main.css" rel="stylesheet" />
 </head>
 <body>
+  <header class="header">
+    <div class="header__logo-container">
+      <img class="header__logo" src="./assets/images/nattr.png" alt="Chatter" />
+    </div>
+  </header>
   <main class="chat-room">
     <div class="chat-room__history">
       <div class="chat-room__messages" id="message-output"></div>
       <div class="chat-room__user-feedback" id="user-feedback"></div>
     </div>
     <form class="user-form">
-      <input class="user-form__username" id="username" type="text" placeholder="Username" />
-      <input class="user-form__message" id="message-input" type="text" placeholder="Message" />
+      <input class="user-form__username" id="username" type="text" placeholder="Username" autocomplete="off" />
+      <input class="user-form__message" id="message-input" type="text" placeholder="Send a message" autocomplete="off" />
       <input class="user-form__send" id="send-button" type="Submit" value="Send" />
     </form>
   </main>
+  <!-- <script src="./js/main.js"></script> -->
   <script src="./dist/bundle.js"></script>
 </body>
 </html>
