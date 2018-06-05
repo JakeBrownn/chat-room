@@ -7,3 +7,5 @@ Experiementing with Node.js and Socket.io to create a simple messenger app.
 ## Usage
 Run `$ npm run server` to get started on your local, open some Chrome tabs and away you go!
 
+## Author Notes
+Wanted to create a basic project to experiement with Socket.io and also try out Webpack for the first time.
