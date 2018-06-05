@@ -1,9 +1,26 @@
 .header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 75px;
+  background-color: $color-base;
+  transition: all 0.2s ease;
   @include flex(row);
 
+  &__logo-container {
+    position: relative;
+    width: 60px;
+  }
+
   &__logo {
+    width: 100%;
+    object-fit: cover;
     @include user-drag(none);
     @include user-select(none);
+  }
+
+  &.disabled {
+    @include blur(7px);
   }
 }

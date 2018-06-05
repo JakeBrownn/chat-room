@@ -20,3 +20,13 @@
 @mixin gradient ($direction) {
   background: linear-gradient($direction, $color-green, $color-light-green);
 }
+
+@mixin blur ($val) {
+  -webkit-filter: blur($val);
+          filter: blur($val);
+}
+
+@mixin visibility ($opacityVal, $visibilityVal) {
+  opacity: $opacityVal;
+  visibility: $visibilityVal;
+}

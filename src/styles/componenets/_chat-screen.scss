@@ -3,10 +3,16 @@
 
 .chat-room {
   position: relative;
+  width: 90%;
   height: 100%;
-  background-color: $color-light-grey;
+  margin: 0 auto;
+  transition: all 0.2s ease;  
 
   &__history {
+    position: absolute;
+    left: 0;
+    top: 75px;
+    width: 100%;
     height: 80%;
     overflow: auto;
     padding: 20px;
@@ -18,6 +24,10 @@
 
   &__user-feedback {
 
+  }
+
+  &.disabled {
+    @include blur(7px);
   }
 }
 
@@ -38,10 +48,10 @@
 }
 
 .user-form {
-  position: fixed;
-  left: 5%;
+  position: absolute;
+  left: 0;
   bottom: 50px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   @include flex(row);
 
@@ -52,19 +62,19 @@
   &__message {
     width: 95%;
   }
+}
 
-  &__send {
-    display: inline-block;
-    background-color: $color-dark-green;
-    width: auto;
-    padding: 10px 20px;
-    color: $color-base;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.button {
+  display: inline-block;
+  background-color: $color-dark-green;
+  width: auto;
+  padding: 10px 20px;
+  color: $color-base;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
-    &:hover {
-      background-color: $color-green;
-    }
+  &:hover {
+    background-color: $color-green;
   }
 }

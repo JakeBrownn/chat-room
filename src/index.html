@@ -3,27 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chat Room</title>
+  <title>Nattr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="./dist//main.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="header">
+  <header class="header disabled" id="header">
     <div class="header__logo-container">
-      <img class="header__logo" src="./assets/images/nattr.png" alt="Chatter" />
+      <img class="header__logo" src="./assets/images/logo-nattr-single.png" alt="Nattr" />
     </div>
   </header>
-  <main class="chat-room">
+  <div class="entry-popup" id="welcome-popup">
+    <div class="entry-popup__wrapper">
+      <div class="entry-popup__logo-container">
+        <img class="entry-popup__logo" src="./assets/images/logo-nattr-main.png" alt="Nattr" />
+      </div>
+      <form class="entry-popup__form" id="popup-form">
+        <p class="entry-popup__text">Welcome to Nattr! A useless chat room that will never see the light of day.</p>
+        <p class="entry-popup__text">Enter a Username below to get started...</p>
+        <input class="entry-popup__input" id="username" type="text" placeholder="Username" required autofocus autocomplete="off" minlength="3" maxlength="10"/>
+        <input class="button" type="submit" value="Let's Go" />
+      </form>
+    </div>
+  </div>
+  <main class="chat-room disabled" id="chat-room">
     <div class="chat-room__history">
       <div class="chat-room__messages" id="message-output"></div>
       <div class="chat-room__user-feedback" id="user-feedback"></div>
     </div>
     <form class="user-form">
-      <input class="user-form__username" id="username" type="text" placeholder="Username" autocomplete="off" />
       <input class="user-form__message" id="message-input" type="text" placeholder="Send a message" autocomplete="off" />
-      <input class="user-form__send" id="send-button" type="Submit" value="Send" />
+      <input class="button" id="send-button" type="Submit" value="Send" />
     </form>
   </main>
   <!-- <script src="./js/main.js"></script> -->

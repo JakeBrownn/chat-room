@@ -10,7 +10,6 @@ const username = document.getElementById('username');
 const button = document.getElementById('send-button');
 const feedback = document.getElementById('user-feedback');
 
-
 // On send message
 button.addEventListener('click', (e) => {
   e.preventDefault();
